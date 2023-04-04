@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="ind.css">
+    <title>Perros</title>
+</head>
+<body>
+    <h1>Dog's App</h1>
+    <section id="randomDogs">
+        <h2>Dogos Aleatorios</h2>
+        <span id="error"></span>
+        <article>
+            <img width="250" alt="Imagen de un perro" id="img1">
+            <button id="btn1" onclick="saveFavoriteDogs()"> Añadir a Favoritos</button>
+        </article>
+        <article>
+            <img width="250" alt="Imagen de un perro" id="img2">
+            <button id="btn1" onclick="saveFavoriteDogs()"> Añadir a Favoritos</button>
+        </article>
+        <button onclick="loadRandomDogs()">Recargar</button>
+    </section>
+
+    <section id="favoritesDogs">
+        <h2>Dogos Favoritos</h2>
+        <article>
+            <img width="250" alt="Imagen de un perro" id="img3">
+            <button id="btn1"> Sacar de Favoritos</button>
+        </article>
+    </section>
+</body>
+</html>
