@@ -35,7 +35,7 @@ div {
 }
 
 #randomDogs {
-    width: 350px;
+    width: 250px;
     margin: 20px auto;
   }
 
@@ -47,7 +47,7 @@ div {
   }
   
 #favoriteDogs {
-  width: 350px;
+  width: 250px;
   margin: 20px auto;
 }
 
@@ -59,6 +59,18 @@ div {
 }
 
   button:hover {
-    background: rgb(98, 24, 167);
+    background: rgb(117, 2, 139);
     color: white;
   }
+
+#uploadingForm {
+  display: flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+#uploadingForm input, button {
+  align-content: center;
+  text-align-last: center;
+}

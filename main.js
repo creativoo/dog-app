@@ -3,6 +3,8 @@ console.log('¡Hola Consola!');
 const API_URL_RANDOM = "https://api.thedogapi.com/v1/images/search?limit=2&?api_key=live_ZSPqxIlHXWM73DLlrh3ZWMCJmqicWdQlOQ8o7XK5gW5bo6A1xjuh7VAcI3qVymQL";
 const API_URL_FAVORITES = "https://api.thedogapi.com/v1/favourites?api_key=live_ZSPqxIlHXWM73DLlrh3ZWMCJmqicWdQlOQ8o7XK5gW5bo6A1xjuh7VAcI3qVymQL";
 const API_URL_DELETE = (id) => `https://api.thedogapi.com/v1/favourites/${id}?api_key=live_ZSPqxIlHXWM73DLlrh3ZWMCJmqicWdQlOQ8o7XK5gW5bo6A1xjuh7VAcI3qVymQL`;
+const API_URL_UPLOAD = "https://api.thedogapi.com/v1/images/upload";
+
 const spanError = document.getElementById('error');
 
 async function loadRandomDogs() {   // Cargando la API de perros con resultados "Random"
@@ -96,6 +98,31 @@ async function deleteFavoriteDogs(id) {
 }
 };
 
+async function uploadDogPhoto() {
+    const form = document.getElementById('uploadingForm');
+    const formData = new FormData(form);
+
+    const res = await fetch (API_URL_UPLOAD,{
+        method: 'POST',
+        headers: {
+            'X-API-KEY':'live_ZSPqxIlHXWM73DLlrh3ZWMCJmqicWdQlOQ8o7XK5gW5bo6A1xjuh7VAcI3qVymQL',
+        },
+        body: formData,
+    })
+    const data = await res.json();
+
+    if (res.status !== 201) {
+        spanError.innerHTML = `Hubo un error al subir perro: ${res.status} ${data.message}`
+    }
+    else {
+        console.log("Foto de dogo cargada :)");
+        console.log({ data });
+        console.log(data.url);
+        saveFavoriteDogs(data.id) 
+
+    console.log(formData.get('file'))
+}
+}
 loadRandomDogs();
 loadFavoritesDogs();
 

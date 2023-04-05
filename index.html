@@ -14,16 +14,22 @@
         <h2>Dogos Aleatorios</h2>
         <span id="error"></span>
         <article>
-            <img width="250" alt="Imagen de un perro" id="img1">
+            <img width="150" alt="Imagen de un perro" id="img1">
             <button id="btn1"> Añadir a Favoritos</button>
         </article>
         <article>
-            <img width="250" alt="Imagen de un perro" id="img2">
+            <img width="150" alt="Imagen de un perro" id="img2">
             <button id="btn2"> Añadir a Favoritos</button>
         </article>
         <button onclick="loadRandomDogs()">Recargar</button>
     </section>
-
+    <section>
+        <h2>Sube foto de tu Dogo</h2>
+        <form id="uploadingForm">
+            <input id="file" type="file" name="file">
+            <button type="button" onclick="uploadDogPhoto()">Subir foto</button>
+        </form>
+    </section>
     <section id="favoriteDogs">
         <h2>Dogos Favoritos</h2>
         <article>
